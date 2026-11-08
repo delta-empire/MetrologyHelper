@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_unit_converter"
+            android:title="@string/menu_unit_converter" />
+        <item
+            android:id="@+id/nav_scale_signal"
+            android:enabled="false"
+            android:title="@string/menu_scale_signal" />
+        <item
+            android:id="@+id/nav_measurement_devices"
+            android:enabled="false"
+            android:title="@string/menu_measurement_devices" />
+        <item
+            android:id="@+id/nav_instructions"
+            android:enabled="false"
+            android:title="@string/menu_instructions" />
+    </group>
+
+    <item android:title="">
+        <menu>
+            <item
+                android:id="@+id/nav_reset_values"
+                android:title="@string/menu_reset_values" />
+            <item
+                android:id="@+id/nav_app_version"
+                android:enabled="false"
+                android:title="@string/menu_app_version" />
+            <item
+                android:id="@+id/nav_website"
+                android:enabled="false"
+                android:title="@string/menu_website" />
+            <item
+                android:id="@+id/nav_settings"
+                android:enabled="false"
+                android:title="@string/menu_settings" />
+        </menu>
+    </item>
+</menu>

@@ -1,3 +1,43 @@
 <resources>
     <string name="app_name">MetrologyHelper</string>
+
+    <!-- Menu items -->
+    <string name="menu_unit_converter">Конвертер единиц измерения</string>
+    <string name="menu_scale_signal">Шкала-сигнал</string>
+    <string name="menu_measurement_devices">Приборы измерения</string>
+    <string name="menu_instructions">Инструкции, справка</string>
+    <string name="menu_reset_values">Сбросить значения</string>
+    <string name="menu_app_version">Версия приложения</string>
+    <string name="menu_website">Веб сайт</string>
+    <string name="menu_settings">Настройки</string>
+
+    <!-- Common -->
+    <string name="si_unit_label">Единица СИ</string>
+    <string name="info">Информация</string>
+    <string name="close">Закрыть</string>
+    <string name="cancel">Отмена</string>
+    <string name="ok">ОК</string>
+
+    <!-- Length converter -->
+    <string name="length_converter_title">Конвертер длины</string>
+
+    <!-- Reset dialog -->
+    <string name="reset_dialog_title">Сброс значений</string>
+    <string name="reset_dialog_message">Все сохранённые значения конвертеров будут сброшены к исходным значениям. Продолжить?</string>
+    <string name="reset">Сбросить</string>
+
+    <!-- Unit info dialog -->
+    <string name="unit_info_title">Информация о единице</string>
+    <string name="unit_name_label">Название:</string>
+    <string name="unit_symbol_label">Обозначение:</string>
+    <string name="unit_category_label">Категория:</string>
+    <string name="unit_description_label">Описание:</string>
+    <string name="unit_coefficient_label">Коэффициент к метру:</string>
+
+    <!-- Unavailable features -->
+    <string name="feature_unavailable">Раздел в разработке</string>
+
+    <!-- Navigation drawer -->
+    <string name="nav_drawer_open">Открыть меню</string>
+    <string name="nav_drawer_close">Закрыть меню</string>
 </resources>

@@ -2,4 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="si_unit_background_light">#FFF3E0</color>
+    <color name="si_unit_background_dark">#2E2416</color>
+    <color name="si_unit_border_light">#FF9800</color>
+    <color name="si_unit_border_dark">#B96420</color>
 </resources>
