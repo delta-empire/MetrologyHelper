@@ -13,6 +13,8 @@ public class LengthUnit {
     private final UnitCategory category;
     private final boolean isSI;
     private final String description;
+    private final String reference;
+    private final String validityPeriod;
 
     public enum UnitCategory {
         SI_BASE("Основная единица СИ"),
@@ -43,6 +45,12 @@ public class LengthUnit {
         this.category = category;
         this.isSI = isSI;
         this.description = description;
+        reference = (category == UnitCategory.SI_BASE || category == UnitCategory.SI_DECIMAL)
+                ? "BIPM: The International System of Units (SI), 9th edition"
+                : "Справочный коэффициент; первоисточник требует проверки";
+        if ("nautical_mile_us_pre1955".equals(id)) validityPeriod = "до 1955 года";
+        else if ("nautical_mile_uk_pre1970".equals(id)) validityPeriod = "до 1970 года";
+        else validityPeriod = "современное либо справочное определение";
     }
 
     public String getId() {
@@ -68,6 +76,9 @@ public class LengthUnit {
     public boolean isSI() {
         return isSI;
     }
+
+    public String getReference() { return reference; }
+    public String getValidityPeriod() { return validityPeriod; }
 
     public String getDescription() {
         return description;
