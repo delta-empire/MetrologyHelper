@@ -7,6 +7,14 @@ import java.math.BigDecimal;
 import static org.junit.Assert.*;
 
 public class LengthConverterTest {
+    @Test public void tinyValueMustNotFormatAsZero() {
+        assertEquals("0.00000000000001", LengthConverter.formatForDisplay(
+                new BigDecimal("0.00000000000001")));
+    }
+    @Test public void inputKeepsHighPrecision() {
+        assertEquals(new BigDecimal("0.000000000000000001"),
+                LengthConverter.parseInput("0,000000000000000001"));
+    }
 
     private static final double DELTA = 0.0000001;
 
