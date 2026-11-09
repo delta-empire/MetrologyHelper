@@ -41,6 +41,7 @@ dependencies {
     implementation(libs.recyclerview)
     implementation(libs.coordinatorlayout)
     implementation(libs.fragment)
+    implementation("com.yandex.android:mobileads:8.6.0")
     testImplementation(libs.junit)
     androidTestImplementation(libs.espresso.core)
     androidTestImplementation(libs.ext.junit)
