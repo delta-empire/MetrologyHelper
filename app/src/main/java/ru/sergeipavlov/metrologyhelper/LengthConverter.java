@@ -8,7 +8,7 @@ import java.math.RoundingMode;
  * Handles conversion between length units using BigDecimal for precision.
  */
 public class LengthConverter {
-    private static final int DISPLAY_SCALE = 12;
+    private static final int MAX_SIGNIFICANT_DIGITS = 34;
     private static final MathContext MC = new MathContext(34, RoundingMode.HALF_UP);
 
     /**
@@ -44,16 +44,9 @@ public class LengthConverter {
             return "0";
         }
 
-        // Scale to display precision and strip trailing zeros
-        BigDecimal scaled = value.setScale(DISPLAY_SCALE, RoundingMode.HALF_UP);
-        String result = scaled.stripTrailingZeros().toPlainString();
-
-        // Handle edge case where stripTrailingZeros gives "0E+1" or similar
-        if (result.contains("E")) {
-            result = scaled.toPlainString();
-        }
-
-        return result;
+        // Do not round all values to twelve decimal places: small dimensions are significant.
+        BigDecimal rounded = value.round(new MathContext(MAX_SIGNIFICANT_DIGITS, RoundingMode.HALF_UP));
+        return rounded.signum() == 0 ? "0" : rounded.stripTrailingZeros().toPlainString();
     }
 
     /**
