@@ -3,6 +3,7 @@ package ru.sergeipavlov.metrologyhelper;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
+import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity
     private NavigationView navigationView;
     private MaterialToolbar toolbar;
     private ConverterPreferences preferences;
+    private StickyBannerController bannerController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,8 @@ public class MainActivity extends AppCompatActivity
         setupViews();
         setupToolbar();
         setupNavigationDrawer();
+        bannerController = new StickyBannerController(this, (FrameLayout) findViewById(R.id.ad_container));
+        bannerController.load();
 
         // Load length converter by default
         if (savedInstanceState == null) {
@@ -112,6 +116,12 @@ public class MainActivity extends AppCompatActivity
                     Toast.makeText(this, "Значения сброшены", Toast.LENGTH_SHORT).show();
                 })
                 .show();
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (bannerController != null) bannerController.destroy();
+        super.onDestroy();
     }
 
     @Override
