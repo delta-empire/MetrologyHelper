@@ -61,11 +61,9 @@ public class ConverterPreferences {
      */
     public void resetAllValues() {
         SharedPreferences.Editor editor = prefs.edit();
-        LengthUnit siUnit = LengthUnits.getSIBaseUnit();
-
-        editor.putString(KEY_LENGTH_UNIT, siUnit.getId());
-        editor.putString(KEY_LENGTH_VALUE, "0");
-
+        // Remove only converter values, preserving unrelated app settings.
+        editor.remove(KEY_LENGTH_UNIT);
+        editor.remove(KEY_LENGTH_VALUE);
         editor.apply();
     }
 
